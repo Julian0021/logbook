@@ -17,6 +17,6 @@ class InvoiceDashboardActivity : AppCompatActivity() {
     }
 
     fun showUsers(view: View) {
-
+        startActivity(Intent(this, UserListActivity::class.java))
     }
 }

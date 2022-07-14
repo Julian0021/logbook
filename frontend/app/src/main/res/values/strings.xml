@@ -33,4 +33,14 @@
     <string name="country">Land</string>
     <string name="driver">Fahrer</string>
     <string name="info">Info</string>
+    <string name="trips">Fahrten</string>
+    <string name="users">Benutzer</string>
+    <string name="user_details">Benutzerdetails</string>
+    <string name="first_name">Vorname</string>
+    <string name="last_name">Nachname</string>
+    <string name="role">Rolle</string>
+    <string name="invoice">Abrechnung</string>
+    <string name="maintenance">Wartung</string>
+    <string name="delete">Löschen</string>
+    <string name="deleted">Gelöscht</string>
 </resources>
