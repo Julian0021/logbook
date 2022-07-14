@@ -29,7 +29,10 @@ interface LogbookApi {
 
     @Headers("Content-Type: application/json")
     @POST("/employees/")
-    suspend fun createEmployee(@Header("Authorization") token: String, @Body employee: EmployeeCreate): Response<EmployeeResponse>
+    suspend fun createEmployee(
+        @Header("Authorization") token: String,
+        @Body employee: EmployeeCreate
+    ): Response<EmployeeResponse>
 
     @Headers("Content-Type: application/json")
     @PUT("/employees/{employee_id}")
@@ -45,14 +48,17 @@ interface LogbookApi {
     ): Response<EmployeeResponse>
 
     @GET("/vehicles")
-    suspend fun readVehicles(@Query("license_plate") licensePlate: String): Response<List<VehicleResponse>>
+    suspend fun readVehicles(@Query("license_plate") licensePlate: String? = null): Response<List<VehicleResponse>>
 
     @GET("/vehicles/{vehicle_id}")
     suspend fun readVehicle(@Path("vehicle_id") id: Int): Response<VehicleResponse>
 
     @Headers("Content-Type: application/json")
     @POST("/vehicles/")
-    suspend fun createVehicle(@Body vehicle: VehicleCreate): Response<VehicleResponse>
+    suspend fun createVehicle(
+        @Header("Authorization") token: String,
+        @Body vehicle: VehicleCreate
+    ): Response<VehicleResponse>
 
     @Headers("Content-Type: application/json")
     @PUT("/vehicles/{vehicle_id}")
@@ -62,7 +68,10 @@ interface LogbookApi {
     ): Response<VehicleResponse>
 
     @DELETE("/vehicles/{vehicle_id}")
-    suspend fun deleteVehicle(@Path("vehicle_id") vehicle_id: Int): Response<VehicleResponse>
+    suspend fun deleteVehicle(
+        @Header("Authorization") token: String,
+        @Path("vehicle_id") vehicle_id: Int
+    ): Response<VehicleResponse>
 
     @GET("/trips")
     suspend fun readTrips(): Response<List<TripResponse>>
@@ -82,7 +91,7 @@ interface LogbookApi {
     suspend fun deleteTrip(@Path("trip_id") trip_id: Int): Response<TripResponse>
 
     @GET("/vehicle_comments")
-    suspend fun readVehicleComments(): Response<List<VehicleCommentResponse>>
+    suspend fun readVehicleComments(@Query("vehicle_id") vehicleId: Int): Response<List<VehicleCommentResponse>>
 
     @Headers("Content-Type: application/json")
     @POST("/vehicle_comments/")
@@ -96,5 +105,5 @@ interface LogbookApi {
     ): Response<VehicleCommentResponse>
 
     @DELETE("/vehicle_comments/{comment_id}")
-    suspend fun deleteVehicleComment(@Path("vehicle_comment_id") comment_id: Int): Response<VehicleCommentResponse>
+    suspend fun deleteVehicleComment(@Path("comment_id") commentId: Int): Response<VehicleCommentResponse>
 }

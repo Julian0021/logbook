@@ -45,13 +45,17 @@ class NewUserActivity : AppCompatActivity() {
         }
 
         val role =
-            (rgRole.getChildAt(rgRole.indexOfChild(rgRole.findViewById<RadioButton>(rbId))) as RadioButton).text.toString()
+            when ((rgRole.getChildAt(rgRole.indexOfChild(rgRole.findViewById<RadioButton>(rbId))) as RadioButton).text.toString()) {
+                getString(R.string.driver) -> "driver"
+                getString(R.string.invoice) -> "invoice"
+                getString(R.string.maintenance) -> "maintenance"
+                else -> ""
+            }
 
         GlobalScope.launch(Dispatchers.Main) {
             val token =
                 getSharedPreferences("employee", Context.MODE_PRIVATE).getString("access_token", "")
-            val em = EmployeeCreate(personnelNumber.toInt(), firstName, lastName, role, password)
-            println(em)
+
             val response = RetrofitInstance.api.createEmployee(
                 "Bearer ${token!!}",
                 EmployeeCreate(personnelNumber.toInt(), firstName, lastName, role, password)

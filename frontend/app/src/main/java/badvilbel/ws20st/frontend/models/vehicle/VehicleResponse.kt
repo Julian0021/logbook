@@ -1,6 +1,7 @@
 package badvilbel.ws20st.frontend.models.vehicle
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class VehicleResponse(
     val id: Int,
@@ -8,4 +9,4 @@ data class VehicleResponse(
     val manufacturer: String,
     val model: String,
     val mileage: Double,
-)
+) : Serializable

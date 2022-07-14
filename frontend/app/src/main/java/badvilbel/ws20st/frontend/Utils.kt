@@ -1,6 +1,5 @@
 package badvilbel.ws20st.frontend
 
-import android.content.SharedPreferences
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*

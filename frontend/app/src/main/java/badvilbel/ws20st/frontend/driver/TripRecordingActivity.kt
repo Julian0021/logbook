@@ -16,8 +16,6 @@ import androidx.core.app.ActivityCompat
 import badvilbel.ws20st.frontend.R
 import badvilbel.ws20st.frontend.Utils
 import com.google.android.gms.location.*
-import java.text.DecimalFormat
-import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -138,7 +136,6 @@ class TripRecordingActivity : AppCompatActivity() {
 
     fun cancel(view: View) {
         fusedLocationClient.removeLocationUpdates(locationCallback)
-        //startActivity(Intent(this, NewTripActivity::class.java))
         finish()
     }
 
@@ -188,7 +185,6 @@ class TripRecordingActivity : AppCompatActivity() {
         finish()
     }
 
-    //override on permission result
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,

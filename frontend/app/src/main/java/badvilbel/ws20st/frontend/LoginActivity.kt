@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.TextView
 import badvilbel.ws20st.frontend.driver.NewTripActivity
 import badvilbel.ws20st.frontend.invoice.InvoiceDashboardActivity
+import badvilbel.ws20st.frontend.maintenance.MaintenanceDashboardActivity
 import badvilbel.ws20st.frontend.models.employee.EmployeeLogin
 import badvilbel.ws20st.frontend.networking.RetrofitInstance
 import kotlinx.coroutines.Dispatchers
@@ -72,6 +73,14 @@ class LoginActivity : AppCompatActivity() {
                             Intent(
                                 this@LoginActivity,
                                 InvoiceDashboardActivity::class.java
+                            )
+                        )
+                    }
+                    "maintenance" -> {
+                        startActivity(
+                            Intent(
+                                this@LoginActivity,
+                                MaintenanceDashboardActivity::class.java
                             )
                         )
                     }

@@ -17,7 +17,6 @@ import badvilbel.ws20st.frontend.models.vehicle_comment.VehicleCommentCreate
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
 import java.util.*
 
 class TripFinishedActivity : AppCompatActivity() {
