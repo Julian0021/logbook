@@ -31,4 +31,6 @@
     <string name="postal_code">Postleitzahl</string>
     <string name="locality">Ort</string>
     <string name="country">Land</string>
+    <string name="driver">Fahrer</string>
+    <string name="info">Info</string>
 </resources>

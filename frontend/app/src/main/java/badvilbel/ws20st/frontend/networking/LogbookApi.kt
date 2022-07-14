@@ -22,7 +22,7 @@ interface LogbookApi {
     suspend fun readEmployees(): Response<List<EmployeeResponse>>
 
     @GET("/employees/{employee_id}")
-    suspend fun readEmployee(@Path("employee_id") id: Int): Response<EmployeeResponse>
+    suspend fun readEmployee(@Header("Authorization") token: String, @Path("employee_id") id: Int): Response<EmployeeResponse>
 
     @Headers("Content-Type: application/json")
     @POST("/employees/")
@@ -42,7 +42,7 @@ interface LogbookApi {
     suspend fun readVehicles(@Query("license_plate") licensePlate: String): Response<List<VehicleResponse>>
 
     @GET("/vehicles/{vehicle_id}")
-    suspend fun readVehicle(@Path("vehicle_id") id: String): Response<VehicleResponse>
+    suspend fun readVehicle(@Path("vehicle_id") id: Int): Response<VehicleResponse>
 
     @Headers("Content-Type: application/json")
     @POST("/vehicles/")

@@ -74,3 +74,6 @@ Content-Type: application/json
   "role": "invoice",
   "password": "123"
 }
+
+###
+GET http://localhost:5000/employees HTTP/1.1

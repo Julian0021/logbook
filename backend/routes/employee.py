@@ -29,7 +29,7 @@ def read_employees(personnel_number: int = None, skip: int = 0, limit: int = 100
 
 @router.get("/{employee_id}", response_model=EmployeeResponse)
 def read_employee(employee_id: int, current_employee=Depends(get_current_employee), db: Session = Depends(get_db)):
-    if current_employee.id != employee_id and current_employee.role != "invoice":
+    if current_employee.role != "invoice":
         raise HTTPException(status_code=401)
 
     employee = employee_service.read(db, employee_id)
