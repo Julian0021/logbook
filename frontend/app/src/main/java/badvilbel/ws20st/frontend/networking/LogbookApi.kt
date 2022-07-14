@@ -29,7 +29,7 @@ interface LogbookApi {
 
     @Headers("Content-Type: application/json")
     @POST("/employees/")
-    suspend fun createEmployee(@Body employee: EmployeeCreate): Response<EmployeeResponse>
+    suspend fun createEmployee(@Header("Authorization") token: String, @Body employee: EmployeeCreate): Response<EmployeeResponse>
 
     @Headers("Content-Type: application/json")
     @PUT("/employees/{employee_id}")

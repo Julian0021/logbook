@@ -1,5 +1,6 @@
 package badvilbel.ws20st.frontend
 
+import android.content.SharedPreferences
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -28,6 +29,5 @@ class Utils {
         fun formatKilometers(kilometers: Double): String {
             return decimalFormat.format(kilometers)
         }
-
     }
 }
